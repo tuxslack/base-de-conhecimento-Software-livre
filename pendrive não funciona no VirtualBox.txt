@@ -1,0 +1,27 @@
+
+$ groups 
+fernando dialout audio netdev clamav vboxusers
+
+
+
+Implementation of the USB 2.0 controller not found!
+Because the USB 2.0 controller state is part of the saved VM state, the VM cannot be started. To fix this problem, either install the 'Oracle VM VirtualBox Extension Pack' or disable USB 2.0 support in the VM settings.
+Note! This error could also mean that an incompatible version of the 'Oracle VM VirtualBox Extension Pack' is installed (VERR_NOT_FOUND).
+
+
+Código de Resultado: 
+NS_ERROR_FAILURE (0x80004005)
+Componente: 
+ConsoleWrap
+Interface: 
+IConsole {872da645-4a9b-1727-bee2-5585105b9eed}
+
+
+
+VirtualBox 5.0.40 (released April 28th 2017)
+
+
+https://www.virtualbox.org/wiki/Download_Old_Builds
+
+
+wget -c http://download.virtualbox.org/virtualbox/5.0.40/Oracle_VM_VirtualBox_Extension_Pack-5.0.40-115130.vbox-extpack
