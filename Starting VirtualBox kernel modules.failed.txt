@@ -56,6 +56,9 @@ Not implemented! Please use the virtualbox-kernel.SlackBuild available at SlackB
 
 
 
+$ groups 
+fernando dialout audio netdev clamav vboxusers
+
 
 
 
@@ -68,6 +71,50 @@ Ativar os serviços e instalar o virtualbox-kernel
 # /etc/rc.d/rc.vboxdrv restart
 Stopping VirtualBox kernel modules ...done.
 Starting VirtualBox kernel modules ...done.
+
+
+
+--------------------------------------------------------------------------------
+
+
+# ls --color /etc/rc.d/rc.vbox* -1
+
+
+chmod -x \
+/etc/rc.d/rc.vboxautostart-service \
+/etc/rc.d/rc.vboxballoonctrl-service \
+/etc/rc.d/rc.vboxdrv
+
+
+
+# sudo gedit /etc/rc.d/rc.local
+
+
+
+# Você precisará adicionar as seguintes linhas a /etc/rc.d/rc.local: 
+
+	# Iniciar vboxdrv
+
+	if [ -x /etc/rc.d/rc.vboxdrv ]; then
+	  /etc/rc.d/rc.vboxdrv start
+	fi
+
+# Verifique que:
+#
+# chmod +x /etc/rc.d/rc.vboxdrv
+#
+#
+# Isso carregará o módulo de kernel de suporte para o VirtualBox.
+
+
+
+chmod +x /etc/rc.d/rc.vboxdrv
+
+
+https://slackbuilds.org/slackbuilds/14.2/system/virtualbox/README.SLACKWARE
+
+--------------------------------------------------------------------------------
+
 
 
 
